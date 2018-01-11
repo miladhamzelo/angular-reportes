@@ -4,6 +4,7 @@ import { AdminLayoutComponent } from './components/common/layouts/admin-layout/a
 import { AuthLayoutComponent } from './components/common/layouts/auth-layout/auth-layout.component';
 
 import { AuthService } from './services/auth/auth.service';
+import {AppInboxModule} from './views/app-inbox/app-inbox.module';
 
 export const rootRouterConfig: Routes = [
   {
@@ -25,6 +26,11 @@ export const rootRouterConfig: Routes = [
         path: 'reportes',
         loadChildren: './views/reportes/reportes.module#ReportesModule',
         data: { title: 'reportes', breadcrumb: 'REPORTES'}
+      },
+      {
+        path: 'inbox',
+        loadChildren: './views/app-inbox/app-inbox.module#AppInboxModule',
+        data: { title: 'inbox', breadcrumb: 'INBOX'}
       }
     ]
   },

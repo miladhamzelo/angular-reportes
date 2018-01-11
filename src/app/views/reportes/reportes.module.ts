@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {
+  MatSidenavModule,
   MatIconModule,
   MatCardModule,
   MatMenuModule,
@@ -8,17 +9,21 @@ import {
   MatButtonModule,
   MatChipsModule,
   MatListModule,
-  MatGridListModule
+  MatGridListModule,MatInputModule
 } from '@angular/material';
-import { RouterModule } from '@angular/router';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { ChartsModule } from 'ng2-charts/ng2-charts';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-import { CommonPipesModule } from "../../pipes/common/common-pipes.module";
+import { AppConfirmModule } from '../../services/app-confirm/app-confirm.module';
+import { AppLoaderModule } from '../../services/app-loader/app-loader.module';
 
-import { ReportesComponent } from './reportes.component';
-import { ReportesRoutes } from "./reportes.routing";
-import {SidebarComponent} from '../../components/reports/sidebar/sidebar.component';
+import {RouterModule} from '@angular/router';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {ChartsModule} from 'ng2-charts/ng2-charts';
+import {NgxDatatableModule} from '@swimlane/ngx-datatable';
+import {CommonPipesModule} from '../../pipes/common/common-pipes.module';
+
+import {ReportesComponent} from './reportes.component';
+import {ReportesRoutes} from './reportes.routing';
+import {SidebarComponent} from './sidebar/sidebar.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -35,10 +40,11 @@ import {SidebarComponent} from '../../components/reports/sidebar/sidebar.compone
     ChartsModule,
     NgxDatatableModule,
     CommonPipesModule,
+    HttpClientModule,
+    // MatSidenavModule,
     RouterModule.forChild(ReportesRoutes)
   ],
-  declarations: [ReportesComponent,SidebarComponent],
-  exports: []
+  declarations: [ReportesComponent, SidebarComponent],
 })
 export class ReportesModule {
 

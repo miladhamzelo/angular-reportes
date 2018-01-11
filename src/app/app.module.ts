@@ -13,7 +13,7 @@ import { AppComponent } from './app.component';
 import { RoutePartsService } from './services/route-parts/route-parts.service';
 import { NavigationService } from "./services/navigation/navigation.service";
 import { AuthService } from './services/auth/auth.service';
-import { SidebarComponent } from './components/reports/sidebar/sidebar.component';
+import { SidebarComponent } from './views/reportes/sidebar/sidebar.component';
 import { ReportesComponent } from './views/reportes/reportes.component';
 
 export function createTranslateLoader(http: Http) {

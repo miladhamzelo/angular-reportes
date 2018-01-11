@@ -5,7 +5,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router";
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TranslateModule } from 'ng2-translate/ng2-translate';
-import { 
+import {
   MatSidenavModule,
   MatListModule,
   MatTooltipModule,
@@ -60,8 +60,8 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
   declarations: [
     AdminLayoutComponent,
     AuthLayoutComponent,
-    TopbarComponent, 
-    NavigationComponent, 
+    TopbarComponent,
+    NavigationComponent,
     NotificationsComponent, CustomizerComponent, BreadcrumbComponent
   ],
   providers: [ThemeService],
