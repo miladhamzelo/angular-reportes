@@ -24,13 +24,34 @@
           <div fxLayout="row" fxLayoutWrap="wrap">
             <div *ngIf="reporteSelected" fxFlex="100" fxFlex.gt-xs="50" class="m-0">
               <div class="pb-1" *ngFor="let campos of reporteSelected.campos">
+                <div *ngIf="campos.id">
                 <mat-form-field
-                  class="full-width mat-input-container mat-form-field ng-tns-c19-6 mat-form-field-type-mat-input mat-form-field-can-float mat-primary ng-pristine ng-valid ng-touched">
-                  <label>{{campos.nombre}}:</label>
-                  <input
-                    matInput
-                    value="">
+                  class="full-width" *ngFor="let properties of campos.properties">
+                  <!--{{ campos|json }}<br>-->
+
+                  <div [ngSwitch]="properties.tipo_etiqueta">
+                    <div *ngSwitchCase="1">
+                      <label>{{campos.nombre}}:</label>
+                      <input
+                        matInput
+                        type="{{properties.tipo}}"
+                        value="">
+                    </div>
+                    <div *ngSwitchCase="2">
+                      <label>{{campos.nombre}}:</label>
+                      <select>
+                        <option value="0">Seleccione</option>
+                      </select>
+                    </div>
+                    <div *ngSwitchCase="3">
+                      <input
+                        matInput
+                        type="{{properties.tipo}}"
+                        value="{{campos.nombre}}">
+                    </div>
+                  </div>
                 </mat-form-field>
+                </div>
               </div>
             </div>
           </div>
