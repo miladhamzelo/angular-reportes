@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { CustomValidators } from 'ng2-validation';
+import {Component, OnInit} from '@angular/core';
+import {FormGroup, FormControl, Validators} from '@angular/forms';
+import {CustomValidators} from 'ng2-validation';
 
 @Component({
   selector: 'app-basic-form',
@@ -12,7 +12,8 @@ export class BasicFormComponent implements OnInit {
   console = console;
   basicForm: FormGroup;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
     let password = new FormControl('', Validators.required);
@@ -43,8 +44,8 @@ export class BasicFormComponent implements OnInit {
       ]),
       agreed: new FormControl('', (control: FormControl) => {
         const agreed = control.value;
-        if(!agreed) {
-          return { agreed: true }
+        if (!agreed) {
+          return {agreed: true}
         }
         return null;
       })

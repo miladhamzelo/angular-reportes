@@ -40,7 +40,6 @@ export class AppInboxComponent implements OnInit {
     this.messages.forEach((msg) => { msg.selected = this.selectToggleFlag });
   }
 
-
   updateSidenav() {
     var self = this;
     setTimeout(() => {

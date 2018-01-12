@@ -1,29 +1,43 @@
 <mat-sidenav-container>
-  <button mat-raised-button class="mat-warn full-width">Prueba 1</button>
-  <mat-sidenav #sidenav  mode="side" class="inbox-sidenav" >
-    <mat-nav-list lass="inbox-nav-list" role="list" >
+  <mat-sidenav #sidenav  mode="side" class="inbox-sidenav" [opened]="isSidenavOpen" >
+    <!--<button mat-raised-button class="mat-warn full-width">Prueba 1</button>-->
+    <mat-toolbar color="primary" class="inbox-toolbar">
+      REPORTE
+    </mat-toolbar>
+    <mat-nav-list class="inbox-nav-list" role="list" >
       <mat-list-item class="primary-imenu-item" role="listitem" routerLinkActive="open" *ngFor="let report of reporte">
         <a fxLayout="row">
-          <mat-icon _ngcontent-c21="" class="mat-icon mat-warn material-icons" color="warn" role="img" aria-hidden="true">local_offer</mat-icon>
-          <span>{{report}}</span>
+          <mat-icon _ngcontent-c21="" class="mat-icon mat-default material-icons" color="default" role="img" aria-hidden="true">assignment</mat-icon>
+          <span>{{report.nombre}}</span>
         </a>
       </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
 
-  <div class="page-wrap">
-    <!-- right side topbar -->
-    <mat-toolbar color="primary" class="inbox-toolbar">
-      <!-- Left sidebar toggle button -->
-      <button mat-icon-button (click)="sidenav.toggle()" fxShow [fxShow.gt-sm]="isMobile"><mat-icon>short_text</mat-icon></button>
-      <!-- multiple email select and control -->
-      <mat-checkbox (change)="selectToggleAll()" class="inbox-toggle-all mr-1"><small>All</small></mat-checkbox>
-      <button mat-icon-button matTooltip="Move to trash"><mat-icon>delete</mat-icon></button>
-      <button mat-icon-button matTooltip="Mark as important" class=""><mat-icon>folder_special</mat-icon></button>
-      <button mat-icon-button matTooltip="Move to archive"><mat-icon>archive</mat-icon></button>
-      <button mat-icon-button matTooltip="Report spam"><mat-icon>error</mat-icon></button>
-    </mat-toolbar>
+  <div class="messages-wrap">
+    <mat-card>
+      <mat-card-content>
+        <form [formGroup]="FiltersForm">
+          <div fxLayout="row" fxLayoutWrap="wrap">
+            <div fxFlex="100" fxFlex.gt-xs="50" class="m-0">
+              <div class="pb-1">
+                <mat-form-field class="full-width mat-input-container mat-form-field ng-tns-c19-6 mat-form-field-type-mat-input mat-form-field-can-float mat-primary ng-pristine ng-valid ng-touched">
+                  <label>BUSQUEDA</label>
+                  <input
+                    matInput
+                    name="search"
+                    formControlName="search"
+                    value="">
+                  </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
   </div>
+
 </mat-sidenav-container>
+
 
 

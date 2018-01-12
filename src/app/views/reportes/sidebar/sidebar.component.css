@@ -1,0 +1,10 @@
+.mat-drawer{
+  min-width: 21vw;
+}
+.inbox-sidenav .inbox-nav-list .mat-list-item-content > a > span{
+ font-size: 13px;
+}
+.inbox-nav-list-item{
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+}

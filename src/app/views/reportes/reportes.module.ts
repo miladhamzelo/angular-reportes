@@ -9,7 +9,9 @@ import {
   MatButtonModule,
   MatChipsModule,
   MatListModule,
-  MatGridListModule,MatInputModule
+  MatGridListModule,MatInputModule,
+  MatDialogModule,
+  MatToolbarModule
 } from '@angular/material';
 import { AppConfirmModule } from '../../services/app-confirm/app-confirm.module';
 import { AppLoaderModule } from '../../services/app-loader/app-loader.module';
@@ -24,10 +26,14 @@ import {ReportesComponent} from './reportes.component';
 import {ReportesRoutes} from './reportes.routing';
 import {SidebarComponent} from './sidebar/sidebar.component';
 import {HttpClientModule} from '@angular/common/http';
+import { FiltersComponent } from './filters/filters.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatIconModule,
     MatCardModule,
     MatMenuModule,
@@ -41,10 +47,12 @@ import {HttpClientModule} from '@angular/common/http';
     NgxDatatableModule,
     CommonPipesModule,
     HttpClientModule,
-    // MatSidenavModule,
+    MatSidenavModule,
+    MatDialogModule,
+    MatToolbarModule,
     RouterModule.forChild(ReportesRoutes)
   ],
-  declarations: [ReportesComponent, SidebarComponent],
+  declarations: [ReportesComponent, SidebarComponent, FiltersComponent],
 })
 export class ReportesModule {
 

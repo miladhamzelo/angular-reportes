@@ -8,6 +8,11 @@ import { WizardComponent } from './wizard/wizard.component';
 export const FormsRoutes: Routes = [
   {
     path: '',
+    redirectTo: 'basic',
+    pathMatch: 'forms'
+  },
+  {
+    path: '',
     children: [{
       path: 'basic',
       component: BasicFormComponent,
