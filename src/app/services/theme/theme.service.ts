@@ -16,7 +16,7 @@ export class ThemeService {
     isActive: false
   }, {
     name: 'egret-indigo',
-    baseColor: '#3f51b5',
+    baseColor: '#1f8ed6',
     isActive: true
   }];
   activatedThemeName: String;

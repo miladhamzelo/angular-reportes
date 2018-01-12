@@ -8,7 +8,7 @@ $mat-primary: (
     200 : #9fa8da,
     300 : #7985cb,
     400 : #5c6bc0,
-    500 : #3f51b5,
+    500 : #1f8ed6,
     600 : #394aae,
     700 : #3140a5,
     800 : #29379d,
@@ -114,7 +114,7 @@ $primary-dark: darken( map-get($mat-primary, 500), 8% );
     .default-bg {
         background: #ffffff !important;
     }
-    /* Hopscotch Tour */ 
+    /* Hopscotch Tour */
     div.hopscotch-bubble {
         border-color: $primary-dark;
     }

@@ -10,13 +10,13 @@
 ## Globals
 ## Common
 ## Loader
-## Third pirty adjust 
-    Scroll Bar 
+## Third pirty adjust
+    Scroll Bar
     Data table
 ## Top Bar
 ## Main Sidenav
 ## Collapsed Sidenav
-## Session 
+## Session
     Sign in
     sign up
     forgot
@@ -85,17 +85,17 @@ a {
 p {
     margin: 0 0 16px;
 }
-.h1, 
-.h2, 
-.h3, 
-.h4, 
-.h5, 
-.h6, 
-h1, 
-h2, 
-h3, 
-h4, 
-h5, 
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
 h6 {
     margin-bottom: .5rem;
     font-weight: 400;
@@ -106,23 +106,23 @@ h6 {
 h1 {
     font-size: 2rem;
 }
-.h2, 
+.h2,
 h2 {
     font-size: 1.75rem;
 }
-.h3, 
+.h3,
 h3 {
     font-size: 1.5rem;
 }
-.h4, 
+.h4,
 h4 {
     font-size: 1.25rem;
 }
-.h5, 
+.h5,
 h5 {
     font-size: 1rem;
 }
-.h6, 
+.h6,
 h6 {
     font-size: .875rem;
 }
@@ -486,16 +486,16 @@ code {
 }
 
 .fixed-topbar .rightside-content-hold {
-    overflow: auto; 
-    position: absolute; 
-    bottom:0; 
-    left:0; 
-    right:0; 
-    top: 64px; 
+    overflow: auto;
+    position: absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    top: 64px;
 }
 .fixed-topbar-breadcrumb .rightside-content-hold {
-    overflow: auto; 
-    position: absolute !important; 
+    overflow: auto;
+    position: absolute !important;
     bottom:0;
     left:0;
     right:0;
@@ -544,7 +544,7 @@ code {
     min-height: 200px;
 }
 .chart {
-    display: block; 
+    display: block;
     width: 100%;
 }
 .form-error-msg {
@@ -623,11 +623,11 @@ code {
     50% { -webkit-transform: scale(1.0) }
 }
 @keyframes sk-bounce {
-    0%, 100% { 
+    0%, 100% {
         transform: scale(0.0);
         -webkit-transform: scale(0.0);
-    } 
-    50% { 
+    }
+    50% {
         transform: scale(1.0);
         -webkit-transform: scale(1.0);
     }
@@ -635,12 +635,12 @@ code {
 
 /*---- Third pirty adjust -----*/
 /*--------- Material ---------*/
-mat-list a[mat-list-item] .mat-list-item-content, 
-mat-list mat-list-item .mat-list-item-content, 
-mat-nav-list a[mat-list-item] .mat-list-item-content, 
+mat-list a[mat-list-item] .mat-list-item-content,
+mat-list mat-list-item .mat-list-item-content,
+mat-nav-list a[mat-list-item] .mat-list-item-content,
 mat-nav-list mat-list-item .mat-list-item-content,
 [mat-menu-item],
-.mat-option, 
+.mat-option,
 body .mat-select-trigger {
     font-size: .875rem !important;
 }
@@ -682,7 +682,7 @@ div.hopscotch-bubble .hopscotch-nav-button {
     font-family: "Roboto",Helvetica Neue,sans-serif !important;
 }
 div.hopscotch-bubble {
-    border: 1px solid; 
+    border: 1px solid;
     border-radius: 2px;
 }
 div.hopscotch-bubble .hopscotch-bubble-number {
@@ -886,9 +886,9 @@ div.hopscotch-bubble .hopscotch-nav-button.prev:hover {
     text-align: center;
 }
 .branding .app-logo {
-    width: auto;
-    height: 22px;
-    margin-right: 8px;
+    width: 100%;
+    height: 100%;
+    /*margin-right: 8px;*/
 }
 .branding .app-logo-text {
     width: auto;
@@ -1116,7 +1116,7 @@ div.hopscotch-bubble .hopscotch-nav-button.prev:hover {
 }
 .collapsed-menu .sidebar-panel .mat-nav-list > div > .sidebar-list-item a span:not(.menu-item-tooltip),
 .collapsed-menu .sidebar-panel .mat-nav-list > div >  .sidebar-list-item a .menu-caret,
-.collapsed-menu .sidebar-panel .nav-section-title, 
+.collapsed-menu .sidebar-panel .nav-section-title,
 .collapsed-menu .sidebar-panel .icon-menu-separator,
 .collapsed-menu .sidebar-panel .app-user,
 .collapsed-menu .sidebar-panel .sub-menu {
@@ -1148,7 +1148,7 @@ div.hopscotch-bubble .hopscotch-nav-button.prev:hover {
     margin: 0 auto;
 }
 .session-form-hold > .mat-card {
-    margin: 0;    
+    margin: 0;
 }
 .session-lockscreen {
     max-width: 320px;
@@ -1229,11 +1229,11 @@ div.hopscotch-bubble .hopscotch-nav-button.prev:hover {
 }
 
 .inbox-sidenav .mat-list-item-content .mat-icon {
-    margin-right: 8px; 
+    margin-right: 8px;
 }
 .inbox-toolbar {
     min-height: 56px !important;
-    margin-bottom: .333rem; 
+    margin-bottom: .333rem;
 }
 .inbox-toolbar .mat-toolbar-row {
     height: 56px !important;
@@ -1400,7 +1400,7 @@ div.hopscotch-bubble .hopscotch-nav-button.prev:hover {
 }
 .user-card .user-details .mat-icon {
     vertical-align: top;
-    margin-right: .5rem; 
+    margin-right: .5rem;
 }
 /*------- Profile ------*/
 .profile-sidebar {
