@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {BehaviorSubject} from 'rxjs';
 
 interface IMenuItem {
   type: string,       // Possible values: link/dropDown/icon/separator/extLink
@@ -10,6 +10,7 @@ interface IMenuItem {
   disabled?: boolean, // If true, item will not be appeared in sidenav.
   sub?: IChildItem[]  // Dropdown items
 }
+
 interface IChildItem {
   name: string,       // Display text
   state: string       // Router state
@@ -17,43 +18,44 @@ interface IChildItem {
 
 @Injectable()
 export class NavigationService {
-  constructor() {}
+  constructor() {
+  }
 
-  defaultMenu:IMenuItem[] = [
+  defaultMenu: IMenuItem[] = [
     {
-      name: 'DASHBOARD',
+      name: 'REPORTES',
       type: 'link',
-      tooltip: 'Dashboard',
+      tooltip: 'Reportes',
       icon: 'dashboard',
-      state: 'dashboard'
+      state: 'reportes'
     }
   ]
-  separatorMenu:IMenuItem[] = [
+  separatorMenu: IMenuItem[] = [
     {
       type: 'separator',
       name: 'Custom components'
     },
     {
-      name: 'DASHBOARD',
+      name: 'REPORTES',
       type: 'link',
-      tooltip: 'Dashboard',
+      tooltip: 'Reportes',
       icon: 'dashboard',
-      state: 'dashboard'
+      state: 'reportes'
     }
   ]
-  iconMenu:IMenuItem[] = [
+  iconMenu: IMenuItem[] = [
     {
-      name: 'DASHBOARD',
+      name: 'REPORTES',
       type: 'link',
-      tooltip: 'Dashboard',
+      tooltip: 'Reportes',
       icon: 'dashboard',
-      state: 'dashboard'
+      state: 'reportes'
     }
   ]
 
   // Icon menu TITLE at the very top of navigation.
   // This title will appear if any icon type item is present in menu.
-  iconTypeMenuTitle:string = 'Frequently Accessed';
+  iconTypeMenuTitle: string = 'Frequently Accessed';
   // sets iconMenu as default;
   menuItems = new BehaviorSubject<IMenuItem[]>(this.iconMenu);
   // navigation component has subscribed to this Observable
@@ -64,7 +66,7 @@ export class NavigationService {
   // Or you can customize this method to supply different menu for
   // different user type.
   publishNavigationChange(menuType: string) {
-    switch(menuType) {
+    switch (menuType) {
       case 'separator-menu':
         this.menuItems.next(this.separatorMenu);
         break;

@@ -1,13 +1,16 @@
 <mat-sidenav-container>
-  <mat-sidenav #sidenav  mode="side" class="inbox-sidenav" [opened]="isSidenavOpen" >
+  <mat-sidenav #sidenav mode="side" class="inbox-sidenav" [opened]="isSidenavOpen">
     <!--<button mat-raised-button class="mat-warn full-width">Prueba 1</button>-->
     <mat-toolbar color="primary" class="inbox-toolbar">
       REPORTE
     </mat-toolbar>
-    <mat-nav-list class="inbox-nav-list" role="list" >
-      <mat-list-item class="primary-imenu-item" role="listitem" routerLinkActive="open" *ngFor="let report of reporte">
+    <mat-nav-list class="inbox-nav-list" role="list">
+      <mat-list-item class="primary-imenu-item" role="listitem" *ngFor="let report of reportes"
+                     (click)="reporteSelected = report" [class.list-item-active]="reporteSelected === report">
         <a fxLayout="row">
-          <mat-icon _ngcontent-c21="" class="mat-icon mat-default material-icons" color="default" role="img" aria-hidden="true">assignment</mat-icon>
+          <mat-icon _ngcontent-c21="" class="mat-icon mat-default material-icons" color="default" role="img"
+                    aria-hidden="true">assignment
+          </mat-icon>
           <span>{{report.nombre}}</span>
         </a>
       </mat-list-item>
@@ -19,22 +22,22 @@
       <mat-card-content>
         <form [formGroup]="FiltersForm">
           <div fxLayout="row" fxLayoutWrap="wrap">
-            <div fxFlex="100" fxFlex.gt-xs="50" class="m-0">
-              <div class="pb-1">
-                <mat-form-field class="full-width mat-input-container mat-form-field ng-tns-c19-6 mat-form-field-type-mat-input mat-form-field-can-float mat-primary ng-pristine ng-valid ng-touched">
-                  <label>BUSQUEDA</label>
+            <div *ngIf="reporteSelected" fxFlex="100" fxFlex.gt-xs="50" class="m-0">
+              <div class="pb-1" *ngFor="let campos of reporteSelected.campos">
+                <mat-form-field
+                  class="full-width mat-input-container mat-form-field ng-tns-c19-6 mat-form-field-type-mat-input mat-form-field-can-float mat-primary ng-pristine ng-valid ng-touched">
+                  <label>{{campos.nombre}}:</label>
                   <input
                     matInput
-                    name="search"
-                    formControlName="search"
                     value="">
-                  </mat-form-field>
+                </mat-form-field>
               </div>
             </div>
           </div>
         </form>
       </mat-card-content>
     </mat-card>
+
   </div>
 
 </mat-sidenav-container>

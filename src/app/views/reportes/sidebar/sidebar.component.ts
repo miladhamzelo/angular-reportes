@@ -16,14 +16,14 @@ import {IReportes} from '../../../models/campos.interfaces';
   providers: [ReporteService]
 })
 export class SidebarComponent implements OnInit {
-  reporte: IListado[];
+  reportes: IListado[];
   filters: IReportes[];
   isMobile;
   isSidenavOpen: Boolean = true;
   @ViewChild(MatSidenav) private sideNave: MatSidenav;
   screenSizeWatcher: Subscription;
   selectToggleFlag = false;
-
+  reporteSelected: IListado;
   FiltersForm: FormGroup;
 
   constructor(private reporteService: ReporteService,
@@ -36,28 +36,21 @@ export class SidebarComponent implements OnInit {
     this.SideNavInit();
 
     this.reporteService.getListado().subscribe((data) => {
-      // console.log(data)
-      this.reporte = data;
-      //console.log(this.reporte);
-    })
+      this.reportes = data;
+    });
 
-    this.reporteService.getListadoProperties(22).subscribe((data)=>{
-      this.filters = data;
-      console.log(this.filters);
-    })
 
     this.FiltersForm = new FormGroup({
       search: new FormControl('', [
         Validators.minLength(4),
         Validators.maxLength(9)
       ])
-    })
-
+    });
 
   }
 
   openComposeDialog() {
-    let dialogRef = this.composeDialog.open(MailComposeComponent);
+    const dialogRef = this.composeDialog.open(MailComposeComponent);
     dialogRef.afterClosed().subscribe(result => {
     });
   }
@@ -67,11 +60,11 @@ export class SidebarComponent implements OnInit {
   }
 
   updateSidenav() {
-    var self = this;
+    const self = this;
     setTimeout(() => {
       self.isSidenavOpen = !self.isMobile;
       self.sideNave.mode = self.isMobile ? 'over' : 'side';
-    })
+    });
   }
 
   SideNavInit() {
@@ -80,6 +73,13 @@ export class SidebarComponent implements OnInit {
     this.screenSizeWatcher = this.media.subscribe((change: MediaChange) => {
       this.isMobile = (change.mqAlias == 'xs') || (change.mqAlias == 'sm');
       this.updateSidenav();
+    });
+  }
+
+  listItemActive(val) {
+    this.reporteService.getListadoProperties(val.id).subscribe((data) => {
+      this.filters = data;
+      console.log(this.filters);
     });
   }
 

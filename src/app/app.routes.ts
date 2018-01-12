@@ -29,9 +29,9 @@ export const rootRouterConfig: Routes = [
         data: { title: 'reportes', breadcrumb: 'REPORTES'}
       },
       {
-        path: 'forms',
-        loadChildren: './views/forms/forms.module#AppFormsModule',
-        data: { title: 'forms', breadcrumb: 'forms'}
+        path: 'inbox',
+        loadChildren: './views/app-inbox/app-inbox.module#AppInboxModule',
+        data: { title: 'inbox', breadcrumb: 'inbox'}
       }
     ]
   },
